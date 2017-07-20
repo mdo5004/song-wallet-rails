@@ -25,27 +25,34 @@ Things you may want to cover:
 # song-wallet-rails
 
 Users
-* Name
+* Username
 * Email
 * Secure Password
-* have many songs
-* have many setlists
-* belong to many groups
-* have many friends (users)
+[x] have many songs
+[x] have many setlists
+[x] belong to many groups
+[x] have many friends (users)
 
 Songs
 * Title
 * Artist
 * Content
 * Key
-* belong to many setlists
-* belong to many users
+[x] belong to many setlists
+[x] belong to many users
 
 Setlists
 * Name
 * have many songs
-* belong to many users
+[x] belong to many users
 
 Groups
 * Name
-* have many members (users)
+[x] have many members (users)
+
+Join tables:
+[x] UserSong
+[x] UserSetlist
+[x] UserGroup
+[x] UserFriend
+[x] SongSetlist
