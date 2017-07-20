@@ -1,0 +1,4 @@
+<h1><%= @song.title %></h1>
+<h3><%= @song.artist %></h3>
+<%= text_area_tag 'content', @song.content, size: "100x40" %>
+<%= @song_html.html_safe %>
