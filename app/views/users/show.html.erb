@@ -8,13 +8,21 @@
         <% end %>
         <li><%= link_to "Add...", new_group_path %></li>
     </ul>
-    
+</div>
+<div>
+    <h3>My Friends</h3>
+    <ul>
+       <% @user.friends.each do |friend| %>
+        <li><%= link_to friend.username, user_path(friend) %></li>
+        <% end %>
+        <li>Add...</li>
+    </ul>
 </div>
 <div>
     <h3>My Songs</h3>
     <ul>
        <% @user.songs.each do |song| %>
-        <li><%= song.title %> - <%= song.artist %></li>
+        <li><%= link_to "#{song.title} - #{song.artist}", song_path(song) %></li>
         <% end %>
         <li><%= link_to "Add...", new_song_path %></li>
     </ul>
