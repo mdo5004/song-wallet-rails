@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
+# Use pundit to control roles
+gem 'pundit'
 
 # Use 'chordpro' to parse chordpro syntax
 gem 'chordpro', '~> 0.0.1'
