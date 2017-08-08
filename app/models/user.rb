@@ -9,4 +9,7 @@ class User < ApplicationRecord
     has_many :user_setlists
     has_many :setlists, through: :user_setlists
     
+    def name
+        return "#{self.first_name || ''} #{self.last_name || ''}"
+    end
 end
