@@ -3,5 +3,8 @@
     <%= f.label :name %>
     <%= f.text_field :name %>
     
+    <%= f.fields_for :users_attributes do |user_fields| %>
+    <p><%= user_fields.collection_check_boxes :user_ids, current_user.friends, :id, :name %></p>
+    <% end %>
     <%= f.submit %>
 <% end %>

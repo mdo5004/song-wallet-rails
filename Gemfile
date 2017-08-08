@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
  gem 'bcrypt', '~> 3.1.7'
 # Use pundit to control roles
 gem 'pundit'
-
+gem 'pry'
 # Use 'chordpro' to parse chordpro syntax
 gem 'chordpro', '~> 0.0.1'
 
