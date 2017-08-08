@@ -13,7 +13,7 @@
     <h3>My Friends</h3>
     <ul>
        <% @user.friends.each do |friend| %>
-        <li><%= link_to friend.username, user_path(friend) %></li>
+        <li><%= link_to friend.name, user_path(friend) %></li>
         <% end %>
         <li>Add...</li>
     </ul>
