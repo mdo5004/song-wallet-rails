@@ -1,0 +1,6 @@
+<h1><%= @setlist.name %></h1>
+<ul>
+    <% @setlist.songs.each do |song| %>
+    <li><%= song.title %></li>
+    <% end %>
+</ul>

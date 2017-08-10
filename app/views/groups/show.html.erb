@@ -5,3 +5,9 @@
     <li><%= user.name %></li>
     <% end %>
 </ul>
+<h3>Setlists</h3>
+<ul>
+    <% @group.setlists.each do |setlist| %>
+    <li><%= setlist.name %></li>
+    <% end %>
+</ul>

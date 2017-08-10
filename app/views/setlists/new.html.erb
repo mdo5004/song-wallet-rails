@@ -1,0 +1,9 @@
+<h1>New Setlist</h1>
+<%= form_for @setlist do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.fields_for :songs_attributes do |songs_fields| %>
+<p><%= songs_fields.collection_check_boxes :song_ids, current_user.songs, :id, :title %></p>
+<% end %>
+<%= f.submit %>
+<% end %>

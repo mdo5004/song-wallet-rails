@@ -6,5 +6,9 @@
     <%= f.fields_for :users_attributes do |user_fields| %>
     <p><%= user_fields.collection_check_boxes :user_ids, current_user.friends, :id, :name %></p>
     <% end %>
+    
+    <%= f.fields_for :setlists_attributes do |setlist_fields| %>
+    <p><%= setlist_fields.collection_check_boxes :setlist_ids, current_user.setlists, :id, :name %></p>
+    <% end %>
     <%= f.submit %>
 <% end %>
