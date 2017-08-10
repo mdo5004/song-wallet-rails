@@ -1,0 +1,13 @@
+<%= form_for group do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+    <%= f.fields_for :users_attributes do |user_fields| %>
+    <p><%= user_fields.collection_check_boxes(:user_ids, current_user.friends, :id, :name, checked: group.users.map(&:id))%></p>
+    <% end %>
+    
+    <%= f.fields_for :setlists_attributes do |setlist_fields| %>
+    <p><%= setlist_fields.collection_check_boxes(:setlist_ids, current_user.setlists, :id, :name, checked: group.setlists.map(&:id)) %></p>
+    <% end %>
+    <%= f.submit %>
+<% end %>
