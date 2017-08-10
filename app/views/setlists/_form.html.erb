@@ -1,0 +1,8 @@
+<%= form_for setlist do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.fields_for :songs_attributes do |songs_fields| %>
+<p><%= songs_fields.collection_check_boxes(:song_ids, current_user.songs, :id, :title, checked: setlist.songs.map(&:id))%></p>
+<% end %>
+<%= f.submit %>
+<% end %>

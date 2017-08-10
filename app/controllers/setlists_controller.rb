@@ -7,7 +7,7 @@ class SetlistsController < ApplicationController
         @setlist.user_ids = current_user.id
         if @setlist.save
             
-            redirect_to user_path(current_user) 
+            redirect_to root_path 
         else
             render :new
         end
@@ -15,6 +15,25 @@ class SetlistsController < ApplicationController
     def show
         @setlist = Setlist.find(params[:id]) 
     end
+    def edit
+        @setlist = Setlist.find(params[:id])
+    end
+    
+    def update
+        @setlist = Setlist.find(params[:id])
+        if @setlist.update(setlist_params)
+            redirect_to setlist_path(@setlist)
+        else
+            render :edit
+        end
+    end
+       
+    def destroy
+        @setlist = Setlist.find(params[:id])
+        @setlist.destroy
+        redirect_to root_path
+    end
+    
     private
     def setlist_params
         params.require(:setlist).permit(:name, :songs_attributes => [:song_ids => []])

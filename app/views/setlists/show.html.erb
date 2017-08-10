@@ -1,6 +1,8 @@
 <h1><%= @setlist.name %></h1>
 <ul>
     <% @setlist.songs.each do |song| %>
-    <li><%= song.title %></li>
+    <li><%= link_to song.title, song_path(song) %></li>
     <% end %>
 </ul>
+<%= link_to "Edit", edit_setlist_path(@setlist) %>
+<%= link_to "Delete", setlist_path(@setlist), method:"DELETE" %>

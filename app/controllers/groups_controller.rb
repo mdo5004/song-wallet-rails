@@ -14,7 +14,7 @@ class GroupsController < ApplicationController
         else
             redirect_to signin_path
         end
-        redirect_to user_path(current_user)
+        redirect_to root_path
     end
 
     def show
@@ -32,6 +32,11 @@ class GroupsController < ApplicationController
         else
             render :edit
         end
+    end
+    def destroy
+        @group = Group.find(params[:id])
+        @group.destroy
+        redirect_to root_path
     end
     private
     def group_params
