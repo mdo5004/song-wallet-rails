@@ -38,6 +38,9 @@ class GroupsController < ApplicationController
         @group.destroy
         redirect_to root_path
     end
+    def index
+        @groups = current_user.groups
+    end
     private
     def group_params
         params.require(:group).permit(:name, :users_attributes => [:user_ids => []], :setlists_attributes => [:setlist_ids => []]) 

@@ -18,6 +18,9 @@ class SetlistsController < ApplicationController
     def edit
         @setlist = Setlist.find(params[:id])
     end
+    def index
+         @setlists = current_user.setlists
+    end
     
     def update
         @setlist = Setlist.find(params[:id])
